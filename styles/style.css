@@ -1,22 +1,17 @@
-body {        
-
+body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  background-color: #fcfcfc;
-/*   background-image: ; */
-  /* height: 100vh; */
-  background-color: blanchedalmond;
-  background-image: url("https://i.pinimg.com/736x/b3/c9/b4/b3c9b4b14411f138341f571735d486b2.jpg");
+  background-image: url('your-image-path.jpg'); /* 실제 이미지 경로로 교체 */
+  background-size: cover;          /* 배경 이미지를 전체 화면에 꽉 차게 */
+  background-position: center;     /* 배경 이미지 중앙 정렬 */
+  background-repeat: no-repeat;    /* 반복 없음 */
+  height: 100vh;                   /* 뷰포트 높이 전체 사용 */
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  font-family: sans-serif;
-  background-repeat : no-repeat;
-  background-size : cover;
-  height: 100vh;
-  width: 100vw;
+  flex-direction: column;
+  align-items: center;             /* 자식 요소 수평 중앙 정렬 */
+  justify-content: center;         /* 자식 요소 수직 중앙 정렬 */
 }
+
 
 .container {
   text-align: center;
