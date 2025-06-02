@@ -1,13 +1,21 @@
-body {
+body {        
+
   margin: 0;
   padding: 0;
   height: 100vh;
   background-color: #fcfcfc;
 /*   background-image: ; */
+  /* height: 100vh; */
+  background-color: blanchedalmond;
+  background-image: url("https://i.pinimg.com/736x/b3/c9/b4/b3c9b4b14411f138341f571735d486b2.jpg");
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   font-family: sans-serif;
+  background-repeat : no-repeat;
+  background-size : cover;
+  height: 100vh;
+  width: 100vw;
 }
 
 .container {
@@ -51,6 +59,6 @@ h1.animate {
 }
 
 p {
-  color: blue;
+  color: burlywood;
   font-size: 1.2em;
 }
