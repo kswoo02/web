@@ -1,0 +1,55 @@
+/* body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+} */
+
+.container {
+  text-align: center;
+}
+
+/* h1.animate {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  animation: float 2.5s ease-in-out infinite, colorShift 5s linear infinite;
+}
+
+/* 부드럽게 위아래로 흔들리는 효과 */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 색상이 천천히 바뀌는 효과 */
+@keyframes colorShift {
+  0% {
+    color: #ffcd00;
+  }
+  25% {
+    color: #ff6f00;
+  }
+  50% {
+    color: #4dd0e1;
+  }
+  75% {
+    color: #7e57c2;
+  }
+  100% {
+    color: #ffcd00;
+  }
+}
+
+p {
+  color: blue;
+  font-size: 1.2em;
+} */
