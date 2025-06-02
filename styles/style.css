@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('your-image-path.jpg'); /* 실제 이미지 경로로 교체 */
+  background-image: url('https://i.pinimg.com/736x/b3/c9/b4/b3c9b4b14411f138341f571735d486b2.jpg'); /* 실제 이미지 경로로 교체 */
   background-size: cover;          /* 배경 이미지를 전체 화면에 꽉 차게 */
   background-position: center;     /* 배경 이미지 중앙 정렬 */
   background-repeat: no-repeat;    /* 반복 없음 */
