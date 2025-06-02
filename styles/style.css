@@ -1,19 +1,20 @@
-/* body {
+body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #fcfcfc;
+  background-image: ;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: sans-serif;
-} */
+}
 
 .container {
   text-align: center;
 }
 
-/* h1.animate {
+h1.animate {
   font-size: 3em;
   margin-bottom: 0.5em;
   animation: float 2.5s ease-in-out infinite, colorShift 5s linear infinite;
