@@ -3,7 +3,7 @@ body {
   padding: 0;
   height: 100vh;
   background-color: #fcfcfc;
-  background-image: ;
+/*   background-image: ; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,4 +53,4 @@ h1.animate {
 p {
   color: blue;
   font-size: 1.2em;
-} */
+}
