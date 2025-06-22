@@ -123,15 +123,15 @@ ul li:hover:nth-child(3) a:after {
 }
 
 ul li:hover:nth-child(4) a {
-  background: #92d8ed;
+  background: linear-gradient(45deg, #f9ce34, #ee2a7b 40%, #8761d3 100%);
 }
 ul li:hover:nth-child(4) a .fa,
 ul li:hover:nth-child(4) a span {
   color: #fff;
 }
-ul li:hover:nth-child(4) a:before{
-  background: #67b3ed;
+ul li:hover:nth-child(4) a:before {
+  background: linear-gradient(135deg, #f9ce34, #ee2a7b 70%);
 }
 ul li:hover:nth-child(4) a:after {
-  background: #63addc;
+  background: linear-gradient(135deg, #ee2a7b, #855bd7 90%);
 }
