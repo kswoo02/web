@@ -85,15 +85,17 @@ ul li a:after {
 
 /* Hover 색상 효과 */
 ul li:hover:nth-child(1) a {
-  background: #3b5998;
+  background: #2ace79;
 }
 ul li:hover:nth-child(1) a .fa,
 ul li:hover:nth-child(1) a span {
   color: #fff;
 }
-ul li:hover:nth-child(1) a:before,
+ul li:hover:nth-child(1) a:before{
+  background: #4fbe85;
+}
 ul li:hover:nth-child(1) a:after {
-  background: #2d4373;
+  background: #4bb780;
 }
 
 ul li:hover:nth-child(2) a {
@@ -121,13 +123,15 @@ ul li:hover:nth-child(3) a:after {
 }
 
 ul li:hover:nth-child(4) a {
-  background: #e4405f;
+  background: #92d8ed;
 }
 ul li:hover:nth-child(4) a .fa,
 ul li:hover:nth-child(4) a span {
   color: #fff;
 }
-ul li:hover:nth-child(4) a:before,
+ul li:hover:nth-child(4) a:before{
+  background: #67b3ed;
+}
 ul li:hover:nth-child(4) a:after {
-  background: #d81c3f;
+  background: #63addc;
 }
