@@ -77,6 +77,11 @@ ul li a span {
     flex-wrap: wrap;
     padding: 0 10px;
   }
+
+  ul li {
+    margin: 35px 2vw;   /* 모바일에서만 위아래 28px, 좌우 2vw */
+  }
+
   ul li a {
     width: 95vw;
     min-width: 150px;
