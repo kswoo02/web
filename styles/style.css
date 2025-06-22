@@ -3,46 +3,61 @@ body {
   padding: 0;
   background: #ccc;
   font-family: "Roboto Condensed", sans-serif;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 ul {
+  /* 중앙 정렬 방식 변경 (absolute → flex + min/max) */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-width: 220px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  margin: 0;
-  padding: 0;
+  /* 모바일에서 수평 스크롤 안 생기게 */
+  box-sizing: border-box;
 }
 
 ul li {
   list-style: none;
-  margin: 0 5px;
+  margin: 10px 5px;
 }
 
 ul li a {
   text-decoration: none;
   display: block;
   width: 210px;
+  min-width: 180px;
+  max-width: 90vw;
   height: 80px;
   background: #fff;
   position: relative;
   box-shadow: -20px 20px 10px rgba(0,0,0,0.5);
   transition: 0.5s;
-  /* 기울기, 입체효과 유지 */
   transform: rotate(-30deg) skew(25deg) translate(0, 0);
-  display: flex;              /* flex 중앙정렬 */
+
+  display: flex;
   align-items: center;
   justify-content: center;
   padding-left: 0;
   text-align: center;
+  box-sizing: border-box;
 }
 
 ul li a i {
   font-size: 50px;
   color: #262626;
   line-height: 80px;
-  margin-right: 14px;  /* 아이콘-텍스트 간격 */
+  margin-right: 14px;
   transition: 0.5s;
 }
 
@@ -54,6 +69,23 @@ ul li a span {
   transition: 0.5s;
 }
 
+/* 반응형 - 모바일에서 한 줄에 안 들어가면 자동 줄바꿈 */
+@media (max-width: 900px) {
+  ul {
+    max-width: 100vw;
+    width: 100vw;
+    flex-wrap: wrap;
+    padding: 0 10px;
+  }
+  ul li a {
+    width: 95vw;
+    min-width: 150px;
+    max-width: 300px;
+    font-size: 15px;
+  }
+}
+
+/* 버튼 hover 효과 */
 ul li a:hover {
   transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
   box-shadow: -50px 50px 50px rgba(0,0,0,0.5);
@@ -83,7 +115,7 @@ ul li a:after {
   transform: rotate(0deg) skewX(-45deg);
 }
 
-/* Hover 색상 효과 */
+/* Hover 색상 효과 (각 버튼별) */
 ul li:hover:nth-child(1) a {
   background: #2ace79;
 }
@@ -91,7 +123,7 @@ ul li:hover:nth-child(1) a .fa,
 ul li:hover:nth-child(1) a span {
   color: #fff;
 }
-ul li:hover:nth-child(1) a:before{
+ul li:hover:nth-child(1) a:before {
   background: #4fbe85;
 }
 ul li:hover:nth-child(1) a:after {
@@ -122,6 +154,7 @@ ul li:hover:nth-child(3) a:after {
   background: #c23321;
 }
 
+/* 인스타그램 버튼: 그라데이션 효과 */
 ul li:hover:nth-child(4) a {
   background: linear-gradient(45deg, #f9ce34, #ee2a7b 40%, #8761d3 100%);
 }
