@@ -229,7 +229,6 @@ ul li:hover:nth-child(4) a:after {
     }
       html {
       -webkit-touch-callout:none;
-      -webkit-user-select:none;
       -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
       }
 
