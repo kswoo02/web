@@ -1,0 +1,152 @@
+/* ========== Design tokens (담백한 토스풍) ========== */
+:root{
+  --bg-start:#f7f9fc;
+  --bg-end:#ffffff;
+  --surface:#ffffff;
+  --ink:#0f172a;
+  --ink-2:#334155;
+  --ink-3:#475569;
+  --line:rgba(15,23,42,.08);
+  --primary:#1463ff;
+  --primary-10:rgba(20,99,255,.10);
+
+  --radius-lg:16px;
+  --radius-md:12px;
+
+  --shadow-sm:0 4px 18px rgba(2,6,23,.06);
+  --shadow-md:0 10px 28px rgba(2,6,23,.10);
+}
+
+/* ========== Base ========== */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Pretendard Variable","Roboto Condensed",system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,var(--bg-start),var(--bg-end));
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* 링크 기본 */
+a{color:inherit;text-decoration:none}
+
+/* ========== Navigation (유리효과 + 깔끔한 hover) ========== */
+.menu{
+  position:sticky;top:0;z-index:100;
+  backdrop-filter:saturate(1.2) blur(8px);
+  background:rgba(255,255,255,.65);
+  border-bottom:1px solid var(--line);
+  transition:box-shadow .2s ease, background .2s ease;
+}
+.menu.scrolled{box-shadow:0 6px 24px rgba(2,6,23,.08);background:rgba(255,255,255,.75)}
+nav{max-width:1120px;margin:0 auto;padding:14px 16px}
+.menu-items{display:flex;gap:12px;align-items:center;flex-wrap:wrap; justify-content: center;}
+.menu-items a{
+  padding:10px 12px;border-radius:12px;font-weight:700;letter-spacing:.2px;
+  transition:background .15s ease, color .15s ease, transform .15s ease;
+}
+.menu-items a:hover{background:var(--primary-10);color:var(--primary);transform:translateY(-1px)}
+
+/* ========== Hero (여백 위주) ========== */
+.hero{
+  max-width:1120px;margin:64px auto 24px;padding:0 16px;position:relative;
+  text-align:center; /* ✅ 추가: 섹션 내부 중앙 기준 */
+}
+.hero-title{
+  margin:0 0 8px 0;
+  font-size:clamp(34px,6.2vw,64px);
+  line-height:1.05;font-weight:900;letter-spacing:.2px;
+}
+.hero-sub{
+  margin:6px 0 0 0;color:var(--ink-2);
+  font-size:clamp(15px,2.8vw,20px);max-width:760px;
+  display:inline-block; /* ✅ 추가: 내용 너비로 축소 */
+}
+
+/* 부드러운 블롭(은은하게) */
+.blob{position:absolute;border-radius:50%;filter:blur(26px);opacity:.28;pointer-events:none}
+.blob.a{width:240px;height:240px;background:#a5b4fc;top:-10px;left:-60px;animation:float 16s ease-in-out infinite}
+.blob.b{width:300px;height:300px;background:#86efac;bottom:-40px;right:6%;animation:float 18s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ========== Section / Grid ========== */
+.section{max-width:1120px;margin:28px auto 88px;padding:0 16px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr)}
+.grid-3 > *{grid-column:span 4}
+@media (max-width:980px){.grid-3 > *{grid-column:span 6}}
+@media (max-width:640px){.grid-3 > *{grid-column:span 12}}
+
+/* ========== Card (절제된 인터랙션) ========== */
+.card{
+  position:relative;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(20,99,255,.18)}
+
+.card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(220px 100px at var(--gx,50%) var(--gy,50%), rgba(20,99,255,.08), transparent 60%);
+  opacity:0;transition:opacity .18s ease;
+}
+.card.is-hovered::before{opacity:1}
+
+.card-media{aspect-ratio:16/10;overflow:hidden}
+.card-media img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transform:scale(1);transition:transform .5s ease;
+}
+.card:hover .card-media img{transform:scale(1.03)}
+
+.card-body{padding:16px 18px 18px}
+.card-title{margin:0;font-size:18px;font-weight:800;color:var(--ink)}
+.card-desc{margin:8px 0 0;font-size:14px;color:var(--ink-3)}
+
+/* ========== Social List (정갈) ========== */
+.social {
+  list-style: none;
+  padding: 0;
+  margin: 56px auto 96px;
+  max-width: 1120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.social li a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  min-width: 140px;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.social li a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(20, 99, 255, 0.18);
+  color: var(--primary);
+}
+.social i { font-size: 18px }
+
+/* ========== Utils ========== */
+.container{position:relative}
+.reveal{opacity:0;transform:translateY(12px)} /* 초기값 (JS로 페이드인) */
+
+/* 접근성: 모션 최소화 */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+  .reveal{opacity:1 !important;transform:none !important}
+}

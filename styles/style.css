@@ -1,7 +1,8 @@
+
 body {
   margin: 0;
   padding: 0;
-  background: #ccc;
+  background: rgb(252, 241, 241);
   font-family: "Roboto Condensed", sans-serif;
   min-height: 100vh;
   width: 100vw;
@@ -185,11 +186,13 @@ nav {
 }
 
 nav .menu-items {
-  padding: 0;
-  margin: 0 auto;
-  width: auto;
-  background-color: #333;
-  text-align: center;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    backdrop-filter: saturate(1.2) blur(8px);
+    background: whitesmoke;
+    border-bottom: 1px solid var(--line);
+    transition: box-shadow 0.2s, background 0.2s;
 }
 
 nav .menu-items a {
@@ -197,7 +200,7 @@ nav .menu-items a {
   line-height: 50px;
   height: 50px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: black;
   text-align: center;
   padding: 14.5px 16px;
   text-decoration: none;
@@ -209,7 +212,7 @@ nav .menu-items a:last-child {
 
 nav .menu-items a:hover,
 nav .menu-items a:active {
-  color: #FFD400;
+  color: rgb(67, 67, 243);
   font-weight: normal;
 }
 
@@ -234,3 +237,4 @@ html {
   position: absolute;
   z-index: 1;
 }
+  

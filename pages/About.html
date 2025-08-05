@@ -1,12 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <link rel="stylesheet" href="../styles/pages.css" />
+  <script defer src="../scripts/main.js"></script>
 
+  <!-- ✅ Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet" />
+  <!-- ✅ GSAP + SplitText Plugin (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+  <style>
+    .split-text {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 120px;
+
+      color: black;
+      font-family: "Roboto Condensed", sans-serif;
+    }
+    .hero-title {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <h1>연결 페이지</h1>
+  <div class="menu">
+    <nav class="clearfix">
+      <div class="menu-items clearfix">
+        <a href="About.html">About</a>
+        <a href="Project.html">Project</a>
+        <a href="Travel.html">Travel</a>
+        <a href="Contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <h1 class="hero-title">About Me</h1>
+    <div id="animated-text" class="split-text">여기는 소개 페이지!</div>
+    <div class="blob a"></div>
+    <div class="blob b"></div>
+  </section>
+
+  <section class="section">
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <div class="card-body">
+          <h3 class="card-title">기술 스택</h3>
+          <p class="card-desc">Java, Spring Boot, Python, MySQL, HTML, CSS, JavaScript, React, TypeScript</p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-body">
+          <h3 class="card-title">관심 분야</h3>
+          <p class="card-desc">자동화, 사용자 경험, 데이터 분석</p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-body">
+          <h3 class="card-title">목표</h3>
+          <p class="card-desc">웹 서비스 제작</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const el = document.getElementById("animated-text");
+      const split = new SplitText(el, { type: "chars" });
+      gsap.from(split.chars, {
+        opacity: 0,
+        y: 40,
+        ease: "power3.out",
+        duration: 1,
+        stagger: 0.05,
+      });
+    });
+  </script>
 </body>
 </html>

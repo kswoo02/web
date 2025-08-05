@@ -1,12 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project</title>
+  <link rel="stylesheet" href="../styles/pages.css" />
+  <script defer src="../scripts/main.js"></script>
 </head>
+  <style>
+    .split-text {
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 120px;
+      
+      color: black;
+      font-family: "Roboto Condensed", sans-serif;
+    }
+    .hero-title {
+      text-align: center;
+    }
+  </style>
 <body>
-    <h1>연결 페이지</h1>
+
+  
+  <div class="menu">
+    <nav class="clearfix">
+      <div class="menu-items clearfix">
+        <a href="About.html">About</a>
+        <a href="Project.html">Project</a>
+        <a href="Travel.html">Travel</a>
+        <a href="Contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <h1 class="hero-title">My Projects</h1>
+    <p class="hero-sub">최근에 만든 프로젝트입니다</p>
+    <div class="blob a"></div>
+    <div class="blob b"></div>
+  </section>
+
+  <section class="section">
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <div class="card-media"><img src="../assets/project1.png" alt="프로젝트1" /></div>
+        <div class="card-body">
+          <h3 class="card-title">인스타 자동화</h3>
+          <p class="card-desc">파이썬으로 인스 팔로우, 언팔로우 자동화 구현</p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-media"><img src="../assets/project2.png" alt="프로젝트2" /></div>
+        <div class="card-body">
+          <h3 class="card-title">마이페이지 구현</h3>
+          <p class="card-desc">Spring Boot 기반 RESTful 구조로 구축</p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-media"><img src="../assets/project3.png" alt="프로젝트3" /></div>
+        <div class="card-body">
+          <h3 class="card-title">수강신청 자동화</h3>
+          <p class="card-desc">정해진 시간에 버튼 자동 클릭하는 JS 자동화</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
