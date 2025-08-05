@@ -1,4 +1,4 @@
-
+/* ✅ 메뉴바까지 포함한 전체 스타일 */
 
 body {
   margin: 0;
@@ -11,7 +11,6 @@ body {
 }
 
 ul {
-  /* 중앙 정렬 방식 변경 (absolute → flex + min/max) */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -25,7 +24,6 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* 모바일에서 수평 스크롤 안 생기게 */
   box-sizing: border-box;
 }
 
@@ -43,10 +41,9 @@ ul li a {
   height: 80px;
   background: #fff;
   position: relative;
-  box-shadow: -20px 20px 10px rgba(0,0,0,0.5);
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
   transition: 0.5s;
   transform: rotate(-30deg) skew(25deg) translate(0, 0);
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,7 +68,7 @@ ul li a span {
   transition: 0.5s;
 }
 
-/* 반응형 - 모바일에서 한 줄에 안 들어가면 자동 줄바꿈 */
+/* 반응형 */
 @media (max-width: 900px) {
   ul {
     max-width: 100vw;
@@ -81,7 +78,7 @@ ul li a span {
   }
 
   ul li {
-    margin: 35px 2vw;   /* 모바일에서만 위아래 28px, 좌우 2vw */
+    margin: 35px 2vw;
   }
 
   ul li a {
@@ -95,7 +92,7 @@ ul li a span {
 /* 버튼 hover 효과 */
 ul li a:hover {
   transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
-  box-shadow: -50px 50px 50px rgba(0,0,0,0.5);
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
 }
 
 ul li a:before {
@@ -122,7 +119,7 @@ ul li a:after {
   transform: rotate(0deg) skewX(-45deg);
 }
 
-/* Hover 색상 효과 (각 버튼별) */
+/* Hover 색상 */
 ul li:hover:nth-child(1) a {
   background: #2ace79;
 }
@@ -161,7 +158,6 @@ ul li:hover:nth-child(3) a:after {
   background: #c23321;
 }
 
-/* 인스타그램 버튼: 그라데이션 효과 */
 ul li:hover:nth-child(4) a {
   background: linear-gradient(45deg, #f9ce34, #ee2a7b 40%, #8761d3 100%);
 }
@@ -176,93 +172,67 @@ ul li:hover:nth-child(4) a:after {
   background: linear-gradient(135deg, #ee2a7b, #855bd7 90%);
 }
 
+/* ✅ 상단 메뉴(nav) 관련 스타일 */
 
+.clearfix::after { /* ✅ clearfix 정의 */
+  content: "";
+  display: block;
+  clear: both;
+}
 
-    /* nav 관련 스타일은 그대로 유지 */
-    nav{
-    	font-size: 12pt;
-    	font-family: 'PT Sans', Arial, Sans-serif;
-    	position: relative;
-    }
+nav {
+  font-size: 12pt;
+  font-family: 'PT Sans', Arial, Sans-serif;
+  position: relative;
+}
 
-    /* nav ul 대신 nav .menu-items 로 변경. ul에 있던 스타일도 이리로 가져옴. */
-    nav .menu-items{
-    	padding: 0;
-    	margin: 0 auto;
-    	width: auto;
-        /* ul에 있던 스타일들 */
-        /* list-style-type: none;  div는 기본적으로 점이 없으므로 불필요하지만 ul의 특성을 기억 */
-        background-color: #333;
-        text-align: center;
-    }
+nav .menu-items {
+  padding: 0;
+  margin: 0 auto;
+  width: auto;
+  background-color: #333;
+  text-align: center;
+}
 
-    /* 이전 nav li 스타일에 대응. 이제 a 태그가 항목 역할을 함. */
-    /* 항목들이 가로로 배치되도록 display: inline-block 추가 */
-    nav .menu-items a {
-        display: inline-block; /* 핵심: 가로로 배치하기 위해 추가 */
-    	line-height: 50px;
-        height: 50px;
-    	box-sizing: border-box;
-    	-moz-box-sizing: border-box;
-    	-webkit-box-sizing: border-box;
-        /* li a 와 ul li 에 있던 스타일들을 여기에 병합 */
-        color: #FFFFFF;
-        text-align: center;
-        padding: 14.5px 16px;
-        text-decoration: none;
-    }
-    
-    /* nav li:last-child a 대신 nav .menu-items a:last-child 로 변경 */
-    nav .menu-items a:last-child{
-    	border-right: 0;
-    }
+nav .menu-items a {
+  display: inline-block;
+  line-height: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14.5px 16px;
+  text-decoration: none;
+}
 
-    /* nav a:hover, nav a:active 는 그대로 유지 가능 (상위 셀렉터) */
-    /* nav .menu-items a:hover 로 더 구체적으로 명시할 수도 있음 */
-    nav .menu-items a:hover, nav .menu-items a:active{
-        color: #FFD400; /* li a:hover 에 있던 스타일 */
-        font-weight:normal;
-    }
-    
-    nav a#pull{
-    	display: none;
-    }
-      html {
-      -webkit-touch-callout:none;
-      -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
-      }
+nav .menu-items a:last-child {
+  border-right: 0;
+}
 
-      /* 기존 전역 ul, li, li a 스타일은 이제 사용되지 않으므로 사실상 불필요하지만,
-         위에서 nav .menu-items 및 nav .menu-items a 로 옮겨두었음.
-         아래는 주석 처리하거나 삭제해도 됨.
-      */
-      /* ul{
-        margin: 0;
-        padding: 0;
-        background-color: #333;
-        text-align: center;
-      }
-      li{
-        display: inline-block;
-      }
-      li a{
-        color: #FFFFFF;
-        text-align: center;
-        padding: 14.5px 16px;
-        text-decoration: none;
-      }
-      li a:hover{
-        color: #FFD400;
-        font-weight:normal;
-      } */
+nav .menu-items a:hover,
+nav .menu-items a:active {
+  color: #FFD400;
+  font-weight: normal;
+}
 
-      .menu {
-       width: 5000px;
-       height: 50px;
-       text-align: center;
-       max-width: 100%;
-       background-position: center;
-       background-size: cover;
-       background-color: #333333;color: white;
-       position: absolute;z-index: 1;
-     }
+nav a#pull {
+  display: none;
+}
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.menu {
+  width: 5000px;
+  height: 50px;
+  text-align: center;
+  max-width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-color: #333;
+  color: white;
+  position: absolute;
+  z-index: 1;
+}
