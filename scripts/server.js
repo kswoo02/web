@@ -1,26 +1,34 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require("express");
+const app = express();
+const port = 3000;
+const path = require("path");
 
-const path = require('path');
+// ✅ 정적 파일 서빙 (scripts → ../)
+app.use(express.static(path.join(__dirname, "..")));
 
-app.get('/', function (req, res) {
-	// html 파일 경로 설정
-	const htmlPath = path.resolve(__dirname + '/index.html');
-    
-    // html 파일 보여주기
-    res.sendFile(htmlPath);
+// ✅ 홈 페이지
+app.get(["/", "/Home"], (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../index.html"));
 });
 
-app.get('/connect', function (req, res) {
-	// html 파일 경로 설정
-	const htmlPath = path.resolve(__dirname + '/pages/connect.html');
-    
-    // html 파일 보여주기
-    res.sendFile(htmlPath);
+// ✅ 하위 페이지 라우팅
+app.get("/About", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../pages/About.html"));
 });
 
-// 해당 포트로 서버를 시작하고 들어오는 요청 수신
+app.get("/Project", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../pages/Project.html"));
+});
+
+app.get("/Travel", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../pages/Travel.html"));
+});
+
+app.get("/Contact", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../pages/Contact.html"));
+});
+
+// ✅ 서버 실행
 app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+  console.log(`✅ Server listening at http://localhost:${port}`);
 });
